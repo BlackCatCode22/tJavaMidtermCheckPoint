@@ -26,7 +26,7 @@ public class Hyena extends Animal {
    // Create a method that input hyena names from a file named: animalNames.txt
    public static void inputHyenaNames()  {
        // Define the file path
-       String filePath = "C:\\Users\\BE218\\javaDataFiles\\animalNames.txt";
+       String filePath = "C:\\Users\\BE218\\javaStuff\\animalNames.txt";
 
        try (BufferedReader fileReader = new BufferedReader(new FileReader(filePath));
             Scanner scanner = new Scanner(System.in)) {
