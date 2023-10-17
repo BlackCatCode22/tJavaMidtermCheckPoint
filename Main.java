@@ -4,7 +4,8 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.Calendar;
 import java.time.LocalDate;
-
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 
 
@@ -14,6 +15,8 @@ import java.time.LocalDate;
 // 9/26/23
 
 // updated Oct 5, 2023
+// Updated Oct 17
+// last update before code presentation on Oct 19 at 10:15 AM
 
 
 public class Main {
@@ -21,15 +24,53 @@ public class Main {
     // Creating the genUniqueID method
     private static String genUniqueID(String theSpecies, int numOfSpecies) {
         String prefix = "";
-        int suffix = numOfSpecies + 1;
-
+        int suffix = numOfSpecies;
 
         if (theSpecies.contains("hyena")) {
             prefix = "Hy";
         }
+        else if (theSpecies.contains("lion")) {
+            prefix = "Li";
+        }
+        else if (theSpecies.contains("tiger")) {
+            prefix = "Ti";
+        }
+        else if (theSpecies.contains("bear")) {
+            prefix = "Ti";
+        }
+        else {
+            prefix = "XX";
+        }
 
         return prefix + Integer.valueOf(suffix);
+    }
 
+    static String calcBirthdate(int yearsOld, String birthSeason) {
+
+        int year = 2023 - yearsOld;
+        String monthDay;
+        String newDate;
+
+        switch (birthSeason) {
+            case "spring,":
+                monthDay = "03-21";
+                break;
+            case "summer,":
+                monthDay = "06-21";
+                break;
+            case "fall,":
+                monthDay = "09-21";
+                break;
+            case "winter,":
+                monthDay = "12-21";
+                break;
+            default:
+                monthDay = "01-01";
+                break;
+        }
+        newDate =  Integer.toString(year) + "-" + monthDay;
+
+        return newDate;
     }
 
 
@@ -43,8 +84,6 @@ public class Main {
         Tiger.inputTigerNames();
         Bear.inputBearNames();
         Hyena.inputHyenaNames();
-
-
 
         // Open a csv file using the split() method on a string object
         String path = "C:\\Users\\BE218\\javaStuff\\arrivingAnimals.txt";
@@ -97,14 +136,28 @@ public class Main {
 
                 if (birthSeason.contains("spring")) {
                     myAnimalBD = "Mar 31, " + animalsYearOfBirthDate;
-
                 }
+
+                // Calculate the animal's age: currentDate - animalBirthdate
+
+                // Create a LocalDate object from the animal's birthday.
+
+                // Define a DateTimeFormatter for the input format
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM dd, yyyy");
+
+                // Parse the string and create a LocalDate object
+                LocalDate localDateAnimalBirthday = LocalDate.parse("Mar 21, 2017", formatter);
+
+                // Print the LocalDate
+                System.out.println("\n local date of animal birthday is: " + localDateAnimalBirthday);
+
+                // Do the math
+                // first argument is birthday and second argument is currentDate
+                long animalAgeinYears = ChronoUnit.YEARS.between(localDateAnimalBirthday, currentDate);
 
                 System.out.println("\n\n Animal birth date is: " + myAnimalBD + "\n\n");
 
-
-
-
+                System.out.println("\n\n Animal age in years is: " + animalAgeinYears + "\n\n");
 
 
                 // Subtract 4 years
@@ -113,17 +166,23 @@ public class Main {
                 // Get the new date after subtraction
                 Date yearsAgo = calendar.getTime();
 
-
-
                 // Print the original and new dates
                 System.out.println("Today's Date: " + today);
                 System.out.println("Date " + myArrayOfAgeGenderSpecies[1] + " years ago: " + yearsAgo);
 
+                String mySpecies = myArrayOfAgeGenderSpecies[4];
+                if (mySpecies.contains("hyena")) {
+                    // Create a Hyena object
+                    Hyena myHyena = new Hyena();
+                    String theUniqueID = "";
+
+                }
 
 
+                String myBirthDate = calcBirthdate((int) animalAgeinYears, birthSeason);
+                LocalDate BirthDayAsDateObject = LocalDate.parse(myBirthDate);
 
-                System.out.println("\n Species is " + myArrayOfAgeGenderSpecies[4]);
-                System.out.println("\n Animal Number " + myCounter + " ************");
+
                 System.out.println("\n myArrayOfAnimalData[0] is.. " + myArrayOfAnimalData[0]);
                 System.out.println("\n myArrayOfAnimalData[1] is.. " + myArrayOfAnimalData[1]);
                 System.out.println("\n myArrayOfAnimalData[2] is.. " + myArrayOfAnimalData[2]);
@@ -131,6 +190,8 @@ public class Main {
                 System.out.println("\n myArrayOfAnimalData[4] is.. " + myArrayOfAnimalData[4]);
                 System.out.println("\n myArrayOfAnimalData[5] is.. " + myArrayOfAnimalData[5]);
                 System.out.println("\n\n");
+
+
 
                 // increment the animal counter
                 myCounter++;
