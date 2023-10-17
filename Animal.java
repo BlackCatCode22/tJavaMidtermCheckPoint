@@ -11,6 +11,8 @@ public class Animal {
     private char animalGender;
     private float animalWeight;
     private String arrivingFrom;
+    private Date arrivalDate;
+
 
     // Animal Getters and Setters
     public String getAnimalID() {
@@ -55,21 +57,34 @@ public class Animal {
     public void setArrivingFrom(String arrivingFrom) {
         this.arrivingFrom = arrivingFrom;
     }
-    // Create a getter.
-    // What type of method is this? Is it static and belongs to a class or...
-    // is this method used with objects.
+    public Date getArrivalDate() {
+        return arrivalDate;
+    }
+    public void setArrivalDate(String arrivingFrom) {
+        this.arrivalDate = arrivalDate;
+    }
+
 
     public int getNumOfAnimals() {
         return numOfAnimals;
     }
 
-
-    // Constructor
+    // Constructors
     public Animal() {
         System.out.println("\n A new animal was created!");
         numOfAnimals++;
     }
 
-
+    public Animal(String animalID,
+                  String animalName,
+                  Date animalBirthDate,
+                  String animalColor,
+                  char animalGender,
+                  float animalWeight,
+                  String arrivingFrom,
+                  Date arrivalDate ) {
+        System.out.println("\n A new animal was created!");
+        numOfAnimals++;
+    }
 
 }
