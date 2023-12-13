@@ -11,3 +11,5 @@ Fresno City College
 Fresno, CA
 
 Reviewed Wed Dec 13
+
+Hyena class reviewed for triad replacement
