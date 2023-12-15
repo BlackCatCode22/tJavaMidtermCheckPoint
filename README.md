@@ -15,3 +15,5 @@ Reviewed Wed Dec 13
 Hyena class reviewed for triad replacement
 
 Friday Dec 15
+
+in Villa park with a sugar hangover from a 
