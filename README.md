@@ -25,3 +25,5 @@ nice four hour drive, need lemon water to reverse
 the sugar hangover.
 
 Purchased new HP printer for the insurance proof that
+
+DMV will need - revised goal is to depart for smog at 14.00
