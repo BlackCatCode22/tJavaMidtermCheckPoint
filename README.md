@@ -13,3 +13,5 @@ Fresno, CA
 Reviewed Wed Dec 13
 
 Hyena class reviewed for triad replacement
+
+Friday Dec 15
