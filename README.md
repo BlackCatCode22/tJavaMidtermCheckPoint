@@ -29,3 +29,5 @@ the sugar hangover.
 Purchased new HP printer for the insurance proof that
 
 DMV will need - revised goal is to depart for smog at 14.00
+
+in Fresno Jan 6, 2024
