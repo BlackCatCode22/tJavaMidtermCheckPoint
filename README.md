@@ -33,3 +33,6 @@ DMV will need - revised goal is to depart for smog at 14.00
 in Fresno Jan 6, 2024
 
 launcing class for the new semester!
+
+13:17 in Fresno CA and I am online getting my EECU password reset
+
