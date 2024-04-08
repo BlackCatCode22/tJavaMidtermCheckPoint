@@ -37,4 +37,6 @@ launcing class for the new semester!
 13:17 in Fresno CA and I am online getting my EECU password reset
 all alasses, all are online this semester, were launched latre last night at 02.00
 
+09.45 at FCC 4/8/24
+
 
